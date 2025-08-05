@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Fresh Face - Análisis Facial</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <img src="assets/logo.png" alt="Fresh Face Logo" width="400">
+    <p class="disclaimer">
+      <h5>Este análisis es orientativo y no reemplaza una consulta dermatológica profesional.</h5>
+    </p>
+  </header>
+  <center><main>
+    <section id="input-section">
+      <button id="camera-btn">Usar cámara</button>
+      <input type="file" id="upload-input" accept="image/*">
+    </section>
+    <section id="preview-section" style="display:none;">
+      <canvas id="face-canvas"></canvas>
+      <div id="loader" style="display:none;">
+        <div class="loader-bar">
+          <div class="loader-bar-inner"></div>
+        </div>
+        <span>Analizando rostro...</span>
+      </div>
+      <button id="analyze-btn">Analizar</button>
+    </section>
+    <section id="result-section" style="display:none;">
+      <div id="analysis-results"></div>
+      <button id="download-pdf-btn">Descargar PDF</button>
+      <button id="restart-btn">Nuevo análisis</button>
+    <center></section>
+  </main>
+  <!-- Librerías externas -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.9.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/facemesh@0.0.4/dist/facemesh.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <!-- Tu JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>

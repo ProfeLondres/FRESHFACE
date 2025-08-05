@@ -1,0 +1,81 @@
+:root {
+  --main-bg: #fff6f9;
+  --accent: #f8bbd0;
+  --accent-dark: #f06292;
+  --text: #4a2c2a;
+  --button-bg: #f8bbd0;
+  --button-hover: #f06292;
+}
+
+body {
+  background: var(--main-bg);
+  color: var(--text);
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+  padding: 2rem 1rem 1rem 1rem;
+}
+
+.logo {
+  width: 400px;
+  margin-bottom: 1rem;
+}
+
+.disclaimer {
+  font-size: 0.9rem;
+  color: #b71c1c;
+  margin-top: 0.5rem;
+}
+
+button {
+  background: var(--button-bg);
+  color: var(--text);
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.5rem;
+  margin: 1rem 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: var(--button-hover);
+  color: #fff;
+}
+
+#face-canvas {
+  display: block;
+  margin: 1rem auto;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px #f8bbd0aa;
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Loader bar styles */
+.loader-bar {
+  width: 200px;
+  height: 12px;
+  background: #f8bbd0;
+  border-radius: 8px;
+  margin: 0 auto 10px auto;
+  overflow: hidden;
+  position: relative;
+}
+.loader-bar-inner {
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #f06292, #f8bbd0);
+  border-radius: 8px;
+  animation: loader-bar-anim 2s linear infinite;
+}
+@keyframes loader-bar-anim {
+  0% { width: 0; }
+  50% { width: 100%; }
+  100% { width: 0; }
+}
