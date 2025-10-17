@@ -12,6 +12,36 @@
       <h5>Este análisis es orientativo y no reemplaza una consulta dermatológica profesional.</h5>
     </p>
   </header>
+  <!-- Elemento de video persistente para la cámara -->
+<video id="camera-video" autoplay playsinline muted style="display:none; width: 100%; max-width: 640px; border-radius: 8px;"></video>
+
+<!-- Biblioteca de ejemplos: Clasificación por referencias -->
+<div id="library-section" style="margin-top: 20px; background:#fff; padding:15px; border-radius:10px; border-left:4px solid #f8bbd0;">
+  <h3 style="color:#f06292;">📚 Biblioteca de ejemplos (categorías)</h3>
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <input id="new-category-name" type="text" placeholder="Nombre de categoría (ej: seca)" style="padding:8px; border:1px solid #ddd; border-radius:6px;">
+    <button id="add-category-btn" class="btn">Crear categoría</button>
+    <select id="category-select" style="padding:8px; border:1px solid #ddd; border-radius:6px;">
+      <option value="">Selecciona categoría</option>
+    </select>
+    <input id="category-files" type="file" multiple accept="image/*">
+    <button id="upload-category-images-btn" class="btn">Subir imágenes a categoría</button>
+    <button id="rebuild-centroids-btn" class="btn" title="Recalcular promedios (no necesario para kNN)">Entrenar índices</button>
+  </div>
+  <div id="library-stats" style="margin-top:10px; color:#4a2c2a; font-size:0.9em;"></div>
+
+  <div style="margin-top:10px;">
+    <label style="display:flex; align-items:center; gap:8px;">
+      <input type="checkbox" id="use-reference-classifier" checked>
+      Usar clasificación por referencias (MobileNet + kNN)
+    </label>
+  </div>
+</div>
+
+<!-- TensorFlow.js + MobileNet + kNN Classifier -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.20.0/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@2.1.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/knn-classifier@1.2.2"></script>
   <center><main>
     <section id="input-section">
       <button id="camera-btn">Usar cámara</button>
@@ -64,4 +94,5 @@
 </div>
 </body>
 </html>
+
 
