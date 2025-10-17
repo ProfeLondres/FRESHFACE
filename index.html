@@ -40,5 +40,28 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <!-- Tu JS -->
   <script src="js/main.js"></script>
+    <!-- Biblioteca de ejemplos: Clasificación por referencias -->
+<div id="library-section" style="margin-top: 20px; background:#fff; padding:15px; border-radius:10px; border-left:4px solid #f8bbd0;">
+  <h3 style="color:#f06292;">📚 Biblioteca de ejemplos (categorías)</h3>
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <input id="new-category-name" type="text" placeholder="Nombre de categoría (ej: seca)" style="padding:8px; border:1px solid #ddd; border-radius:6px;">
+    <button id="add-category-btn" class="btn">Crear categoría</button>
+    <select id="category-select" style="padding:8px; border:1px solid #ddd; border-radius:6px;">
+      <option value="">Selecciona categoría</option>
+    </select>
+    <input id="category-files" type="file" multiple accept="image/*">
+    <button id="upload-category-images-btn" class="btn">Subir imágenes a categoría</button>
+    <button id="rebuild-centroids-btn" class="btn" title="Recalcular promedios de referencia">Entrenar índices</button>
+  </div>
+  <div id="library-stats" style="margin-top:10px; color:#4a2c2a; font-size:0.9em;"></div>
+
+  <div style="margin-top:10px;">
+    <label style="display:flex; align-items:center; gap:8px;">
+      <input type="checkbox" id="use-reference-classifier" checked>
+      Usar clasificación por referencias (centroides)
+    </label>
+  </div>
+</div>
 </body>
 </html>
+
